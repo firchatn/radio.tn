@@ -2,18 +2,20 @@
 <html>
 <head>
 	<title>Radio Tn</title>
-<style type="text/css">
-	audio {
-    background-color: red;
-    width: 500px;
-    height: 100px;
-    margin-left: 400px ;
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <style type="text/css">
+  	 .jumbotron {
+
+background-image: url("112977338.png");
+background-size: cover;}
 }
-	h1 {
-    margin-left: 500px ;
-}
-</style>
+  </style>
 </head>
+
 <body>
 <!--
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -30,7 +32,11 @@
  }
 </script>
 -->
-<h1> oxcygene fm</h1>
+<div class="container">
+<div class="jumbotron" >
+
+</div>
+
 <audio controls>
 
   <source src="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" type="audio/mpeg">
@@ -38,6 +44,23 @@
 </audio>
 
 
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Radio Station</h3>
+                </div>
+                <ul class="list-group">
+                    <a href="#" class="list-group-item">Sfax FM</a>
+                    <a href="#" class="list-group-item">Diwan FM</a>
+                    <a href="#" class="list-group-item">Express FM</a>
+                    <a href="#" class="list-group-item">Jeune FM</a>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 </html>
