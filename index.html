@@ -37,10 +37,10 @@ background-size: cover;}
 
 </div>
 
-<audio controls>
+<audio controls id ="audio">
 
-  <source src="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" type="audio/mpeg">
-  <source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
+  <source id="audioSource" src="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" type="audio/mpeg">
+
 </audio>
 
 
@@ -51,16 +51,29 @@ background-size: cover;}
                     <h3 class="panel-title">
                         Radio Station</h3>
                 </div>
-                <ul class="list-group">
-                    <a href="#" class="list-group-item">Sfax FM</a>
-                    <a href="#" class="list-group-item">Diwan FM</a>
-                    <a href="#" class="list-group-item">Express FM</a>
-                    <a href="#" class="list-group-item">Jeune FM</a>
+                <ul id="list" class="list-group">
+                    <a href="#" data-value="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" class="list-group-item">Sfax FM</a>
+                    <a href="#" data-value="" class="list-group-item">Diwan FM</a>
+                    <a id="ex" href="#" data-value="http://expressfm.ice.infomaniak.ch/expressfm-64.mp3" class="list-group-item">Express FM</a>
+                    <a href="#" data-value="" class="list-group-item">Jeune FM</a>
                 </ul>
             </div>
         </div>
 
     </div>
+<script type="text/javascript">
+list.onclick = function(e) {
+  e.preventDefault();
 
+  var elm = e.target;
+  var audio = document.getElementById('audio');
+
+  var source = document.getElementById('audioSource');
+  source.src = elm.getAttribute('data-value');
+
+  audio.load(); //call this to just preload the audio without playing
+  audio.play(); //call this to play the song right away
+};
+</script>
 </body>
 </html>
