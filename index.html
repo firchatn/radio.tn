@@ -34,12 +34,13 @@ background-size: cover;}
 -->
 <div class="container">
 <div class="jumbotron" >
+<h1 id="t"></h1>
 
 </div>
 
 <audio controls id ="audio">
 
-  <source id="audioSource" src="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" type="audio/mpeg">
+  <source id="audioSource" src="http://stream8.tanitweb.com/sfax" type="audio/mpeg">
 
 </audio>
 
@@ -52,10 +53,11 @@ background-size: cover;}
                         Radio Station</h3>
                 </div>
                 <ul id="list" class="list-group">
-                    <a href="#" data-value="http://media.w3.org/2010/07/bunny/04-Death_Becomes_Fur.oga" class="list-group-item">Sfax FM</a>
-                    <a href="#" data-value="" class="list-group-item">Diwan FM</a>
-                    <a id="ex" href="#" data-value="http://expressfm.ice.infomaniak.ch/expressfm-64.mp3" class="list-group-item">Express FM</a>
+                    <a href="#" value="Sfax" data-value="http://stream8.tanitweb.com/sfax" class="list-group-item">Sfax FM</a>
+                    <a href="#" value="Oxcygenne FM" data-value="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" class="list-group-item">Oxcygenne FM</a>
+                    <a href="#" value="Express FM" data-value="http://expressfm.ice.infomaniak.ch/expressfm-64.mp3" class="list-group-item">Express FM</a>
                     <a href="#" data-value="" class="list-group-item">Jeune FM</a>
+                    <a href="#" data-value="http://146.0.72.96:8200/;ShamFMoui9.mp3" class="list-group-item">Shams FM</a>
                 </ul>
             </div>
         </div>
@@ -68,8 +70,10 @@ list.onclick = function(e) {
   var elm = e.target;
   var audio = document.getElementById('audio');
 
+
   var source = document.getElementById('audioSource');
   source.src = elm.getAttribute('data-value');
+  document.getElementById("t").innerHTML = elm.getAttribute('value');
 
   audio.load(); //call this to just preload the audio without playing
   audio.play(); //call this to play the song right away
