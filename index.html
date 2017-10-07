@@ -4,20 +4,26 @@
 	<title>Radio Tn</title>
 </head>
 <body>
-
-
+<!--
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <video id="video"></video>
 <script>
   if(Hls.isSupported()) {
     var video = document.getElementById('video');
     var hls = new Hls();
-    hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
+    hls.loadSource('blob:http://www.radiolive.co.nz/19a10298-52f4-41e4-b02a-b7c1c23597c3');
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
       video.play();
   });
  }
 </script>
+-->
+
+<audio controls>
+  <source src="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" type="audio/mpeg">
+  <source src="http://audio-ogg.ibiblio.org:8000/wcpe.ogg" type="audio/ogg">
+</audio>
+
 </body>
 </html>
