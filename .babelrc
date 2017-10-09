@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "firefox": 52,
+        "chrome": 30
+      },
+      modules: false
+    }]
+  ],
+  "plugins": [],
+  "ignore": [
+    'node_modules/**',
+  ]
+}

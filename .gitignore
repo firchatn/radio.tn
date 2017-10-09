@@ -1,2 +1,10 @@
-*.log
-
+/*.xpi
+/*.zip
+/node_modules/
+/web-ext-artifacts/
+/yarn.lock
+/builds/
+/certs/
+/yarn.lock
+/package-lock.json
+/*.log
