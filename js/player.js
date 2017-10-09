@@ -1,33 +1,18 @@
 const radios = [{
-    title: "I FM",
-    src: "http://5.135.138.182:8000/direct",
-    img: "./imgs/ifm.png",
-    url: "https://www.ifm.tn/",
+    title: "Mosaique FM",
+    src: "http://radio.mosaiquefm.net:8000/mosalive",
+    img: "./imgs/mosaiquefm.png",
+    url: "https://www.mosaiquefm.net/",
 }, {
-    title: "Oxygene FM",
-    src: "http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3",
-    img: "./imgs/radiooxygene.png",
-    url: "http://www.radiooxygene.tn/",
-}, {
-    title: "Express FM",
-    src: "http://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
-    img: "./imgs/radioexpressfm.png",
-    url: "http://www.radioexpressfm.com/",
-}, {
-    title: "Sabra FM",
-    src: "http://stream6.tanitweb.com/sabrafm",
-    img: "./imgs/radiosabrafm.png",
-    url: "http://www.radiosabrafm.net/",
+    title: "Diwan FM",
+    src: "http://stream8.tanitweb.com/diwanfm",
+    img: "./imgs/diwanfm.png",
+    url: "http://www.diwanfm.net/",
 }, {
     title: "Shems FM",
     src: "http://stream6.tanitweb.com/shems",
     img: "./imgs/shemsfm.png",
     url: "http://shemsfm.net:8080/",
-}, {
-    title: "Mosaique FM",
-    src: "http://radio.mosaiquefm.net:8000/mosalive",
-    img: "./imgs/mosaiquefm.png",
-    url: "https://www.mosaiquefm.net/",
 }, {
     title: "Jawhara FM",
     src: "http://streaming2.toutech.net:8000/jawharafm",
@@ -39,6 +24,16 @@ const radios = [{
     img: "./imgs/zitounafm.png",
     url: "http://www.zitounafm.net/",
 }, {
+    title: "Express FM",
+    src: "http://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
+    img: "./imgs/radioexpressfm.png",
+    url: "http://www.radioexpressfm.com/",
+}, {
+    title: "Oxygene FM",
+    src: "http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3",
+    img: "./imgs/radiooxygene.png",
+    url: "http://www.radiooxygene.tn/",
+}, {
     title: "Knooz FM",
     src: "http://streaming.knoozfm.net:8000/knoozfm",
     img: "./imgs/knoozfm.png",
@@ -49,10 +44,15 @@ const radios = [{
     img: "./imgs/capradio.png",
     url: "http://www.capradio.tn/",
 }, {
-    title: "Diwan FM",
-    src: "http://stream8.tanitweb.com/diwanfm",
-    img: "./imgs/diwanfm.png",
-    url: "http://www.diwanfm.net/",
+    title: "I FM",
+    src: "http://5.135.138.182:8000/direct",
+    img: "./imgs/ifm.png",
+    url: "https://www.ifm.tn/",
+}, {
+    title: "Sabra FM",
+    src: "http://stream6.tanitweb.com/sabrafm",
+    img: "./imgs/radiosabrafm.png",
+    url: "http://www.radiosabrafm.net/",
 }, {
     title: "Misk FM",
     src: "http://178.32.253.134:8000/stream?type=.mp3",
@@ -100,7 +100,6 @@ class App {
         this.initAudio();
         this.initUI();
         this.initPlaylist();
-        this.loadAudio();
     }
     initUI() {
         this.controls = {
@@ -128,11 +127,13 @@ class App {
                 i.classList.add("fa-play");
                 this.playing = false;
                 this.audio.pause();
-            } else if (this.playing && this.audioReady) {
+            } else if (!this.playing && this.audioReady) {
                 i.classList.remove("fa-play");
                 i.classList.add("fa-pause");
                 this.playing = true;
                 this.audio.play();
+            } else if (this.audioReady === undefined) {
+                this.loadAudio();
             }
         };
         this.controls.volume.onclick = () => {
@@ -166,6 +167,7 @@ class App {
             this.currentSong = parseInt(e.target.dataset.idx);
             this.loadAudio();
         };
+        this.background.classList.remove("loading");
     }
     initPlaylist() {
         let idx = 0;
@@ -188,8 +190,6 @@ class App {
 
     }
     loadAudio() {
-        let request = new XMLHttpRequest();
-
         this.audioReady = false;
         this.playing = false;
         this.background.classList.add("loading");
@@ -198,9 +198,14 @@ class App {
         this.controls.next.classList.add("disabled");
         this.controls.play.classList.add("disabled");
 
-        this.playAudio(radios[this.currentSong].src);
+        this.audio.src = radios[this.currentSong].src;
+        this.audio.load();
+        this.audio.oncanplay = () => {
+            this.audio.oncanplay = undefined;
+            this.playAudio();
+        };
     }
-    playAudio(url) {
+    playAudio() {
         this.audioReady = true;
         this.playing = true;
 
@@ -214,8 +219,6 @@ class App {
         this.controls.play.getElementsByTagName("i")[0].classList.remove("fa-play");
         this.controls.play.getElementsByTagName("i")[0].classList.add("fa-pause");
 
-        this.audio.src = url;
-        this.audio.load();
         this.audio.play();
     }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Radio @ Tunisia</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
   <meta name="description" content="Listen to live tunisian radios streaming with best audio quality" />
   <meta name="twitter:description" property="og:description" content="Listen to live tunisian radios streaming with best audio quality" />
   <meta name="keywords" content="radio,audio,tunisia,stream,play" />
@@ -13,7 +13,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@lejenome" />
   <meta name="twitter:creator" content="@lejenome" />
   <meta name="twitter:domain" content="https://radio.tik.tn/" />
@@ -26,7 +26,7 @@
 
   <meta name="twitter:title" property="og:title" content="Radio @ Tunisia" />
   <meta property="og:type" content="website" />
-  <meta name="twitter:image" property="og:image" content="https://tik.tn/img/tik-640x480.png" />
+  <meta name="twitter:image" property="og:image" content="https://radio.tik.tn/imgs/logo-512x512.png" />
 
   <!---->
   <script type="application/ld+json">
@@ -44,11 +44,9 @@
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <link rel="shortcut icon" type="image/x-icon" href="https://tik.tn/imgs/tik.ico" />
-  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-16x12.png" sizes="16x12" />
-  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-32x24.png" sizes="32x24" />
-  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-64x48.png" sizes="64x48" />
-  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-640x480.png" sizes="640x480" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-256x256.png" sizes="256x256" />
+  <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-512x512.png" sizes="512x512" />
 
   <script type="text/javascript">
     (function(i, s, o, g, r, a, m) {
@@ -79,7 +77,7 @@
 
 <body>
     <header id="header">
-        <h1 id="title"></h1>
+        <h1 id="title">Radio @ Tunisia by Tik.tn</h1>
         <div id="controls">
             <div class="btn" id="btn-prev"><i class="fa fa-backward"></i></div>
             <div class="btn" id="btn-play"><i class="fa fa-play"></i></div>
@@ -98,6 +96,11 @@
     </div>
     <canvas id="canvas"></canvas>
     <audio id="audio"></audio>
+    <ul class="actions-extra">
+      <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://radio.tik.tn"><i class="fa fa-facebook-square"></i></a></li>
+      <li><a target="_blank" href="https://twitter.com/intent/tweet?url=https://radio.tik.tn&text=I am listing to live radio with Radio @ Tunisia"><i class="fa fa-twitter-square"></i></a></li>
+      <li><a target="_blank" href="https://plus.google.com/share?url=https://radio.tik.tn"><i class="fa fa-google-plus-square"></i></a></li>
+    </ul>
     <a id="codepen-link" href="https://tik.tn/" target="_blank">Tik</a>
 
   <script type="text/javascript">

@@ -1,6 +1,9 @@
 body {
   background-color: #030303;
   overflow: hidden;
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 
 #header {
@@ -29,7 +32,7 @@ main {
   z-index: 90;
   width: 100%;
   height: 100%;
-  padding: 60px 20px;
+  padding: 60px 0 60px 0;
   padding-top: 120px;
   color: #69cdd7;
   display: flex;
@@ -52,7 +55,9 @@ main ul {
   -ms-overflow-style: -ms-autohiding-scrollbar;
   -ms-overflow-style: none;
   padding: 0;
-  margin: 0; 
+  margin: 0;
+  min-height: 100%;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5) inset;
 }
 main li {
   display: inline-block;
@@ -64,7 +69,8 @@ main li {
 main ul li img {
   max-width: 100%;
   max-height: 100%;
- vertical-align:  top;
+  vertical-align:  top;
+  width: 100%;
 }
 
 #title {
@@ -216,7 +222,7 @@ main ul li img {
 
 #codepen-link {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   right: 20px;
   height: 40px;
   width: 40px;
@@ -232,6 +238,35 @@ main ul li img {
   text-align: center;
 }
 #codepen-link:hover {
+  opacity: 0.8;
+  box-shadow: 0 0 6px #efefef;
+}
+
+.actions-extra {
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  z-index: 99;
+  margin: 0;
+  padding:0;
+  list-style: none;
+}
+.actions-extra li {
+  display: inline-block;
+  margin: 10px;
+  padding: 0;
+}
+.actions-extra a {
+  border-radius: 50%;
+  opacity: 0.4;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-size: 24px;
+}
+#codepen-link a:hover {
   opacity: 0.8;
   box-shadow: 0 0 6px #efefef;
 }
