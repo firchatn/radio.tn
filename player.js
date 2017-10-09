@@ -26,45 +26,73 @@ const radios = [{
 }, {
     title: "Mosaique FM",
     src: "http://radio.mosaiquefm.net:8000/mosalive",
+    img: "./imgs/mosaiquefm.png",
+    url: "https://www.mosaiquefm.net/",
 }, {
     title: "Jawhara FM",
     src: "http://streaming2.toutech.net:8000/jawharafm",
+    img: "./imgs/jawharafm.png",
+    url: "http://www.jawharafm.net/",
 }, {
     title: "Zitouna FM",
     src: "http://stream8.tanitweb.com/zitounafm",
+    img: "./imgs/zitounafm.png",
+    url: "http://www.zitounafm.net/",
 }, {
     title: "Knooz FM",
     src: "http://streaming.knoozfm.net:8000/knoozfm",
+    img: "./imgs/knoozfm.png",
+    url: "http://www.knoozfm.net/",
 }, {
     title: "Cap FM",
     src: "http://stream8.tanitweb.com/capfm",
+    img: "./imgs/capradio.png",
+    url: "http://www.capradio.tn/",
 }, {
     title: "Diwan FM",
     src: "http://stream8.tanitweb.com/diwanfm",
+    img: "./imgs/diwanfm.png",
+    url: "http://www.diwanfm.net/",
 }, {
     title: "Misk FM",
     src: "http://178.32.253.134:8000/stream?type=.mp3",
+    img: "./imgs/miskfm.png",
+    url: "http://misk.fm/",
 }, {
     title: "Radio Med",
     src: "http://stream6.tanitweb.com/radiomed",
+    img: "./imgs/radiomedtunisie.png",
+    url: "http://radiomedtunisie.com/",
 }, {
     title: "Oasis FM",
     src: "http://stream6.tanitweb.com/oasis",
+    img: "./imgs/oasisfm.png",
+    url: "http://www.oasisfm.tn/",
 }, {
     title: "Ulysse FM",
     src: "http://188.165.79.152:9990/;stream.mp3",
+    img: "./imgs/ulysse-fm.png",
+    url: "http://www.ulysse-fm.net/",
 }, {
     title: "Saraha FM",
     src: "http://ns326208.ip-37-59-9.eu:8000/sarahafm",
+    img: "./imgs/sarahafm.png",
+    url: "http://sarahafm.tn/",
 }, {
     title: "MFM FM",
     src: "http://92.222.225.69:9300/;",
+    img: "./imgs/radiomfm.png",
+    url: "http://www.radiomfm.tn/",
 }, {
     title: "Nejma FM",
     src: "http://188.166.109.186:8000/stream",
+    img: "./imgs/nejmafm.png",
+    url: "http://nejmafm.com/",
 }, {
     title: "Radio 6",
     src: "http://streaming.radio6tunis.net:8000/radio6tunis",
+    img: "./imgs/radio6tunis.png",
+    url: "http://www.radio6tunis.net/",
 }];
 
 class App {
@@ -132,25 +160,25 @@ class App {
         this.background = document.getElementById("background");
         this.title = document.getElementById("title");
         this.playlist = document.getElementById("playlist");
-      this.playlist.onclick = (e) => {
-        if (!e.target.dataset.idx) {
-          return;
-        }
-        this.currentSong = parseInt(e.target.dataset.idx);
-        this.loadAudio();
-      };
+        this.playlist.onclick = (e) => {
+            if (!e.target.dataset.idx) {
+                return;
+            }
+            this.currentSong = parseInt(e.target.dataset.idx);
+            this.loadAudio();
+        };
     }
     initPlaylist() {
         let idx = 0;
         for (const radio of radios) {
-          const item = document.createElement("li");
-          const img = document.createElement("img");
-          img.src = radio.img;
-          img.dataset.idx = idx;
-          item.dataset.idx = idx;
-          item.appendChild(img);
-          this.playlist.appendChild(item);
-          idx++;
+            const item = document.createElement("li");
+            const img = document.createElement("img");
+            img.src = radio.img;
+            img.dataset.idx = idx;
+            item.dataset.idx = idx;
+            item.appendChild(img);
+            this.playlist.appendChild(item);
+            idx++;
         }
     }
     initAudio() {
