@@ -1,115 +1,127 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Radio Tn</title>
+    <meta charset="UTF-8" />
+    <title>Radio @ Tunisia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Listen to live tunisian radios streaming with best audio quality" />
+  <meta name="twitter:description" property="og:description" content="Listen to live tunisian radios streaming with best audio quality" />
+  <meta name="keywords" content="radio,audio,tunisia,stream,play" />
+  <meta name="author" content="Tik.tn" />
+  <meta name="copyright" content="Tik.tn 2017, All Rights Reserved." />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="shortcut icon" href="Icons8-Windows-8-Music-Radio-1.ico" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lejenome" />
+  <meta name="twitter:creator" content="@lejenome" />
+  <meta name="twitter:domain" content="https://radio.tik.tn/" />
+  <!-- og -->
+  <meta property="og:site_name" content="Radio @ Tunisia" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:url" content="https://radio.tik.tn/" />
+  <link rel="canonical" href="https://radio.tik.tn/" />
+  <meta property="fb:app_id" content="109686076389436" />
 
-  <style type="text/css">
-  	 .jumbotron {
+  <meta name="twitter:title" property="og:title" content="Radio @ Tunisia" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:image" property="og:image" content="https://tik.tn/img/tik-640x480.png" />
 
-	width: 100%;
-    height: 400px;
-    background-image: url('img/112977338.png');
-    background-size: 100% 100%;
-}
-	#radiotitle {
-		color: #FFF0F5;
-		padding:1em;
-		margin-left: 50%;
-		height: 10%;
-		font-family: "Times New Roman", Times, serif;
+  <!---->
+  <script type="application/ld+json">
+    [{
+      "name": "Radio @ Tunisia",
+      "url": "https://radio.tik.tn",
+      "@id": "https://radio.tik.tn",
+      "@type": "WebSite",
+      "@context": "http://schema.org"
+    }]
+  </script>
 
-	}
-	audio { 
-   		display:none;
-	}
-  </style>
+  <!-- Bing Validation code -->
+  <meta name="msvalidate.01" content="53107FC985BA81D864CE98CC28D80C1E" />
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://tik.tn/imgs/tik.ico" />
+  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-16x12.png" sizes="16x12" />
+  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-32x24.png" sizes="32x24" />
+  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-64x48.png" sizes="64x48" />
+  <link rel="icon" type="image/png" href="https://tik.tn/imgs/tik-640x480.png" sizes="640x480" />
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-28759938-10', 'auto');
+    if (document.documentElement.dataset.userId) {
+      ga('set', 'userId', document.documentElement.dataset.userId);
+    }
+    ga('_trackPageLoadTime');
+    ga('send', 'pageview');
+
+  </script>
+
+    <link rel="stylesheet" href="css/player.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300" rel="stylesheet">
 </head>
 
 <body>
-<div class="container">
-<div class="jumbotron" >
-<h1 id="radiotitle"></h1>
-
-</div>
-
-    <div class="row">
-    <div class="col-md-4">Pub Left</div>
-    <div class="col-md-4">
-        
-        <audio controls id ="audio">
-
-  <source id="audioSource" src="http://stream8.tanitweb.com/sfax" type="audio/mpeg">
-
-</audio>
-
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        Radio Station</h3>
-                </div>
-                <ul id="list" class="list-group">
-                    <a href="#" value="I FM" data-value="http://5.135.138.182:8000/direct" class="list-group-item">I FM</a>
-
-                    <a href="#" value="Oxygene FM" data-value="http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3" class="list-group-item">Oxygene FM</a>
-
-                    <a href="#" value="Express FM" data-value="http://expressfm.ice.infomaniak.ch/expressfm-64.mp3" class="list-group-item">Express FM</a>
-
-                    <a href="#" value="Sabra FM" data-value="http://stream6.tanitweb.com/sabrafm" class="list-group-item">Sabra FM</a>
-
-                    <a href="#" value="Shems FM" data-value="http://stream6.tanitweb.com/shems" class="list-group-item">Shems FM</a>
-
-                    <a href="#" value="Mosaique FM" data-value="http://radio.mosaiquefm.net:8000/mosalive" class="list-group-item">Mosaique FM</a>
-
-                    <a href="#" value="Jawhara FM" data-value="http://streaming2.toutech.net:8000/jawharafm" class="list-group-item">Jawhara FM</a>
-
-                    <a href="#" value="Zitouna FM" data-value="http://stream8.tanitweb.com/zitounafm" class="list-group-item">Zitouna FM</a>
-
-                    <a href="#" value="Knooz FM" data-value="http://streaming.knoozfm.net:8000/knoozfm" class="list-group-item">Knooz FM</a>
-
-                    <a href="#" value="Cap FM" data-value="http://stream8.tanitweb.com/capfm" class="list-group-item">Cap FM</a>
-
-                    <a href="#" value="Diwan FM" data-value="http://stream8.tanitweb.com/diwanfm" class="list-group-item">Diwan FM</a>
-
-                    <a href="#" value="Misk FM" data-value="http://178.32.253.134:8000/stream?type=.mp3" class="list-group-item">Misk FM</a>
-
-                    <a href="#" value="Radio Med" data-value="http://stream6.tanitweb.com/radiomed" class="list-group-item">Radio Med</a>
-
-                    <a href="#" value="Oasis FM" data-value="http://stream6.tanitweb.com/oasis" class="list-group-item">Oasis FM</a>
-                    
-                    <a href="#" value="Ulysse FM" data-value="http://188.165.79.152:9990/;stream.mp3" class="list-group-item">Ulysse FM</a>
-
-                    <a href="#" value="Saraha FM" data-value="http://ns326208.ip-37-59-9.eu:8000/sarahafm" class="list-group-item">Saraha FM</a>
-
-                    <a href="#" value="MFM FM" data-value="http://92.222.225.69:9300/;" class="list-group-item">MFM FM</a>
-
-                    <a href="#" value="Nejma FM" data-value="http://188.166.109.186:8000/stream" class="list-group-item">Nejma FM</a>
-
-                    <a href="#" value="Radio 6" data-value="http://streaming.radio6tunis.net:8000/radio6tunis" class="list-group-item">Radio 6</a>
-
-                </ul>
-            </div>
+    <header id="header">
+        <h1 id="title"></h1>
+        <div id="controls">
+            <div class="btn" id="btn-prev"><i class="fa fa-backward"></i></div>
+            <div class="btn" id="btn-play"><i class="fa fa-play"></i></div>
+            <div class="btn" id="btn-next"><i class="fa fa-forward"></i></div>
+            <div class="btn" id="btn-volume"><i class="fa fa-volume-up"></i></div>
         </div>
-<div class="col-md-4">Pub Right</div>
+    </header>
+    <main>
+      <ul id="playlist">
+      </ul>
+    </main>
+    <div class="loading" id="background"></div>
+    <div id="loader">
+        <div id="spinner"></div>
+        <h2 id="loading-text">Loading...</h2>
     </div>
-<script type="text/javascript">
-list.onclick = function(e) {
-  e.preventDefault();
+    <canvas id="canvas"></canvas>
+    <audio id="audio"></audio>
+    <a id="codepen-link" href="https://tik.tn/" target="_blank">Tik</a>
 
-  var elm = e.target;
-  var audio = document.getElementById('audio');
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['enableHeartBeatTimer']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u = "https://api.admin.tik.tn/p";
+      _paq.push(['setTrackerUrl', u]);
+      _paq.push(['setSiteId', 10]);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.type = 'text/javascript';
+      g.defer = true;
+      g.async = true;
+      g.src = u;
+      s.parentNode.insertBefore(g, s);
+    })();
 
+  </script>
 
-  var source = document.getElementById('audioSource');
-  source.src = elm.getAttribute('data-value');
-  document.getElementById("radiotitle").innerHTML = elm.getAttribute('value');
-
-  audio.load(); //call this to just preload the audio without playing
-  audio.play(); //call this to play the song right away
-};
-</script>
+    <script defer src="js/player.js"></script>
 </body>
+
 </html>

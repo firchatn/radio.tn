@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /README.md
+Disallow: /.jshintrc
+Disallow: /.gitignore
+Disallow: /LICENSE.md
+
+Sitemap: https://radio.tik.tn/sitemap.xml
