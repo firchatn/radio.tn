@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ------------------------------ 
+	Radio Slider
+------------------------------ */
+/* Radio General Syles */
+.radio-slider {
+	background: rgb(93, 188, 218);
+	background: -moz-linear-gradient(top, rgba(93, 188, 218, 1) 0%, rgba(72, 140, 169, 1) 100%);
+	background: -webkit-linear-gradient(top, rgba(93, 188, 218, 1) 0%, rgba(72, 140, 169, 1) 100%);
+	background: linear-gradient(to bottom, rgba(93, 188, 218, 1) 0%, rgba(72, 140, 169, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#5dbcda', endColorstr='#488ca9', GradientType=0);
+	background-repeat: no-repeat;
+	padding: 80px 20px 20px 20px;
+}
+.radio-slider .learn-more {
+    background: none;
+    color: #b52103;
+    display: block;
+    font-weight: 700;
+    padding: 0;
+    text-transform: uppercase;
+}
+/* Radio Container */
+.radio-body {
+	background: url('imgs/radio-body.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display: block;
+	margin: 0 auto;
+	max-width: 1209px;
+	height: 760px;
+	padding-top: 107px;
+    margin-top: -60px;
+}
+/* Screen */
+.radio-screen {
+	margin: 0 auto;
+	max-width: 60%;
+}
+.radio-slide-logo {
+	-webkit-align-items: center;
+	align-items: center;
+	background: rgb(255, 255, 255);
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
+	background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 29%, rgba(165, 165, 165, 1) 100%);
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a5a5a5', GradientType=1);
+	border: 7px solid #adadad;
+	border-radius: 40% 40% 0 0;
+	box-shadow: inset 22px 22px 30px -20px rgba(0, 0, 0, 0.8);
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	height: 230px;
+	/*-webkit-justify-content: center;
+	justify-content: center;*/
+	margin: 0 auto;
+	max-width: 475px;
+	padding: 20px 30px;
+	-webkit-clip-path: polygon(50% 0%, 100% 0, 100% 78%, 50% 100%, 0% 78%, 0 0);
+	clip-path: polygon(50% 0%, 100% 0, 100% 78%, 50% 100%, 0% 78%, 0 0);
+}
+/*.radio-slide-logo *::before, .radio-slide-logo *::after {
+    -webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+    box-sizing: unset;
+}*/
+.clip-svg {
+    height: 0;
+    position: absolute;
+    width: 0;
+}
+.clip {
+    -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 78%, 50% 100%, 0% 78%, 0 0);
+    clip-path: polygon(50% 0%, 100% 0, 100% 78%, 50% 100%, 0% 78%, 0 0);
+    /*-webkit-clip-path: url("#clipping");*/
+    clip-path: url("#clipping");
+}
+.slide-wrap {
+	overflow: hidden;
+    /*position: absolute;*/
+	position: relative;
+}
+.radio-slide-logo ul {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.radio-slide-logo li {
+	position: relative;
+    /*position: absolute;*/
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0 40px;
+	text-align: center;
+	width: 480px;
+}
+.radio-slide-logo li img {
+    max-width: 400px;
+    max-height: 140px;
+}
+
+.play-wrap {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin-top: -90px;
+	position: relative;
+	text-align: center;
+}
+.play-container {
+	position: relative;
+    width: 100%;
+}
+.play-container img {
+  max-width: 100%;
+}
+.radio-play-btn {
+	color: #b52103;
+	left: 0;
+	margin-top: 65px;
+	position: absolute;
+	font-size: 50px;
+	width: 100%;
+}
+.radio-play-btn i {
+	cursor: pointer;
+}
+.fa, .fa::before, .fa::after {
+    -webkit-box-sizing: unset;
+    -moz-box-sizing: unset;
+    box-sizing: unset;
+}
+.radio-play-btn .fa-play {
+	margin-left: 7px;
+}
+/* Tuner */
+.radio-tuner {
+	background: #fff;
+	border: 3px solid #651100;
+	border-radius: 8px;
+	box-shadow: inset 18px 18px 30px -20px rgba(0, 0, 0, 0.8);
+	margin: 25px auto 0 auto;
+	max-width: 80%;
+	position: relative;
+}
+.tuner-dial {
+	background: #ff0000;
+	box-shadow: 0px 0px 7px red;
+	height: 62px;
+	position: absolute;
+	width: 2px;
+	left: 6.5%;
+	transition: all .4s ease-in-out;
+	z-index: 1;
+}
+.radio-clients {
+	align-items: center;
+	border-bottom: 2px dotted #000;
+	border-top: 2px dotted #000;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	list-style: none outside none;
+	margin: 10px 20px;
+	padding: 0;
+}
+.radio-clients li {
+	padding: 5px 10px;
+}
+.radio-clients li img {
+	vertical-align: bottom;
+	-webkit-filter: contrast(0);
+	filter: brightness(0);
+	transition: filter .6s ease-in-out;
+    width: 100%;
+	max-height: 25px;
+}
+.radio-clients li.active img {
+	-webkit-filter: contrast(1);
+	filter: brightness(1);
+}
+/* Nav Buttons & Slide Content */
+/* Wrap */
+.radio-display {
+	-webkit-align-items: center;
+	align-items: center;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+	margin: 15px auto 0 auto;
+	max-width: 75%;
+}
+/* Nav */
+.radio-nav {
+	cursor: pointer;
+	max-width: 110px;
+}
+.radio-nav img {
+    width: 100%;
+}
+/* Slide Content */
+.radio-slide-content {
+	background: #fff;
+	border: 3px solid #adadad;
+	border-radius: 8px;
+	box-shadow: inset 18px 18px 30px -20px rgba(0, 0, 0, 0.8);
+	padding: 10px 20px;
+	text-align: center;
+	width: 65%;
+	height: 130px;
+	transition: height .2s ease-in-out;
+}
+.radio-slide-title {
+	font-size: 18px;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.radio-slide-content p {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------ 
+	1199px
+------------------------------ */
+@media screen and (max-width: 1199px) {
+
+	/* Radio Slider */
+	.radio-body {
+	    max-width: 720px;
+	    padding-top: 60px;
+	    height: 450px;
+	    margin-top: -40px;
+	}
+	.radio-screen {
+	    max-width: 450px;
+	}
+	.radio-slide-logo {
+	    height: 140px;
+	    max-width: 300px;
+	}
+	.radio-slide-logo li {
+	    width: 300px;
+	}
+	.radio-slide-logo li img {
+	    max-width: 220px;
+	    max-height: 80px;
+	}
+	.play-wrap {
+	    margin-top: -55px;
+	}
+	.radio-play-btn {
+	    margin-top: 40px;
+	    font-size: 30px;
+	}
+	.radio-tuner {
+	    margin: 15px auto 0 auto;
+	}
+	.radio-clients {
+	    margin: 5px 10px;
+	}
+	.radio-clients li {
+	    max-width: 90px;
+	    display: flex;
+	    align-items: center;
+	    /*! max-height: 40px; */
+	}
+	.tuner-dial {
+	    height: 51px;
+	}
+	.radio-display {
+	    margin: 7px auto 0 auto;
+	}
+	.radio-nav {
+	    max-width: 70px;
+	}
+	.radio-slide-content {
+	    height: 75px;
+	}
+	.radio-slide-title {
+	    font-size: 22px;
+	    margin-bottom: 5px;
+	}
+	.active-content p {
+	    display: none;
+	}
+
+}
+
+
+
+
+
+/* ------------------------------ 
+	768px
+------------------------------ */
+@media screen and (max-width: 768px) {
+	/* Radio Slider */
+	.radio-body {
+		background: url('imgs/radio-body-sm.png');
+		background-repeat: no-repeat;
+		background-size: 100%;
+	    max-width: 450px;
+	    padding-top: 60px;
+	    height: 510px;
+	    margin-top: 0;
+	}
+	.radio-screen {
+	    max-width: 400px;
+	}
+	.radio-slide-logo {
+	    height: 135px;
+	    max-width: 280px;
+	}
+	.radio-slide-logo li {
+	    width: 280px;
+	}
+	.radio-slide-logo li img {
+		max-width: 200px;
+	}
+	.play-wrap {
+	    margin-top: -48px;
+	}
+	.radio-play-btn {
+	    margin-top: 34px;
+	}
+	.radio-clients li {
+	    max-width: 50px;
+	}
+	.tuner-dial {
+		height: 43px;
+	}
+	.radio-display {
+		max-width: 80%;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	.radio-slide-content {
+	    order: -1;
+	    width: 100%;
+	    margin: 5px 0;
+	}
+	.radio-nav {
+	    margin: 5px 20px;
+	    max-width: 65px;
+	}
+
+}
+
+
+
+
+/* ------------------------------ 
+	640px
+------------------------------ */
+@media screen and (max-width: 640px) {
+	/* Audio Player */
+	.player-wrap {
+    	max-width: 215px;
+    }
+    .play-img-wrap {
+    	margin-right: 0;
+    	border-top-right-radius: 5px;
+    }
+    .play-img-wrap img {
+	    border-top-right-radius: 5px;
+	}
+    .player-description {
+	    width: auto;
+	    padding: 0 10px 10px;
+	}
+
+}
+
+
+
+
+
+/* ------------------------------ 
+	479px RADIO SLIDER ONLY!!!
+------------------------------ */
+@media screen and (max-width: 479px) {
+	.radio-slider {
+		padding: 120px 0 20px 0;
+	}
+	.radio-body {
+	    background: url('imgs/radio-body-xs.png');
+	    background-size: 100% 100%;
+	    max-width: 100%;
+	}
+	.radio-tuner {
+		max-width: 95%;
+	}
+	.radio-display {
+	    max-width: 95%;
+	}
+
+}
+
+
+
+
+/* ------------------------------ 
+	380px RADIO SLIDER ONLY!!!
+------------------------------ */
+@media screen and (max-width: 380px) {
+	.radio-body {
+		padding-top: 65px;
+	}
+	.radio-slide-logo {
+	    max-width: 220px;
+	}
+	.radio-slide-logo li {
+	    width: 220px;
+	}
+	.radio-slide-logo li img {
+	    max-width: 140px;
+	}
+	.play-wrap {
+		align-items: center;
+	}
+	.radio-play-btn {
+	    font-size: 26px;
+	    margin-top: 0;
+	    top: 30px;
+	}
+
+}
+
+
+
+
+/* ------------------------------ 
+	340px
+------------------------------ */
+@media screen and (max-width: 340px) {
+	.radio-play-btn {
+	    top: 25px;
+	}
+
+}
