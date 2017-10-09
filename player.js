@@ -97,7 +97,6 @@ const radios = [{
 
 class App {
     constructor() {
-        this.globalMovement = new Vector2();
         this.initAudio();
         this.initUI();
         this.initPlaylist();
