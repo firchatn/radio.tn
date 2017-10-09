@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "tn.tik.radio"
+    versionCode = "10"
+    version     = "1.0.0" >
+  <name>Radio @ Tunisia</name>
+  <description>Listen to live Tunisia radios streaming with best audio quality</description>
+  <author href="https://tik.tn" email="contact.tik.tn@gmail.com">
+      Tik.tn
+  </author>
+  <icon src="imgs/logo-512x512.png" />
+  <platform name="ios" />
+  <platform name="android" />
+  <platform name="winphone" />
+  <access origin="*" />
+</widget>
