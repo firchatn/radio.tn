@@ -4,32 +4,32 @@ const radios = [{
     "src": "http://jalinburton.com/portfolio/ID-Stronghold.mp3",
     "title": "ID Stronghold",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mi enim, ultricies egestas tincidunt vitae, cursus in erat. Etiam id cursus dui. Curabitur congue.",
-    "img": "imgs/id-stronhold-logo-lg.png",
+    "img": "./imgs/radiokef.png",
 }, {
     "src": "http://jalinburton.com/portfolio/Buca-Di-Beppo.mp3",
     "title": "Buca Di Beppo",
     "description": "Neque porta suscipit interdum, libero odio consectetur purus, vehicula pretium nunc mauris ac neque. Pellentesque dapibus, enim quis cursus facilisis, tellus nisi ullamcorper odio.",
-    "img": "imgs/bucca-di-beppo-logo-lg.png",
+    "img": "./imgs/radiosfax.png",
 }, {
     "src": "http://jalinburton.com/portfolio/Simple-Mobile.mp3",
     "title": "Simple Mobile",
     "description": "Vitae pulvinar metus nisl quis ex. Donec tempor quam non ligula sodales, vel porttitor mauris bibendum. Donec eget velit a diam congue commodo.",
-    "img": "imgs/simple-mobile-logo-lg.png",
+    "img": "./imgs/radiogafsa.png",
 }, {
     "src": "http://jalinburton.com/portfolio/Chocolate-Pen.mp3",
     "title": "Chocolate Pen",
     "description": "Pellentesque maximus mi eget arcu cursus, sit amet viverra arcu luctus.",
-    "img": "imgs/chocolate-pen-logo-lg.png",
+    "img": "./imgs/radiojeunes.png",
 }, {
     "src": "http://jalinburton.com/portfolio/Subway.mp3",
     "title": "Subway",
     "description": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum condimentum, arcu ut egestas congue.",
-    "img": "imgs/subway-logo-lg.png",
+    "img": "./imgs/radiomonastir.png",
 }, {
     "src": "http://jalinburton.com/portfolio/Courtesy-Toyota.mp3",
     "title": "Courtesy Toyota",
     "description": "Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris id porttitor felis, in vulputate mi. In rhoncus vestibulum nisl ac feugiat.",
-    "img": "imgs/toyota-logo-lg.png",
+    "img": "./imgs/radionationale.png",
 }];
 
 const radiosScreenUL = document.getElementById("radios-screen");
