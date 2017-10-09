@@ -58,13 +58,22 @@ main ul {
   margin: 0;
   min-height: 100%;
   box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.5) inset;
+  -webkit-box-pack: center !important;
+  -webkit-justify-content: center !important;
+  -ms-flex-pack: center !important;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  align-content: flex-start;
 }
 main li {
-  display: inline-block;
   padding: 10px;
   width: 150px;
   height: 150px;
   box-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+  -flex-flow: column;
+  display: block;
 }
 main ul li img {
   max-width: 100%;
