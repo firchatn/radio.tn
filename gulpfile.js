@@ -91,7 +91,7 @@ gulp.task('js:compile', () => {
       taskName: path.basename(f),
       entry: f,
       source: path.basename(f),
-      dest: f.replace('.js', '.min.js'),
+      dest: './dist',
     };
   });
   let rollupCache;
@@ -115,7 +115,7 @@ gulp.task('js:compile', () => {
 
 gulp.task('html', ['html:prettify']);
 gulp.task('css', ['css:prettify', 'css:lint']);
-gulp.task('js', ['js:prettify', 'js:lint', 'js:compile']);
+gulp.task('js', ['js:prettify', 'js:lint']);
 gulp.task('build', ['ext:build']);
 gulp.task('docs', ['docs:copy', 'docs:js']);
 
