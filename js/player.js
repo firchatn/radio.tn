@@ -155,7 +155,7 @@ class App {
         default:
           break;
       }
-      this.gainNode.gain.value = this.volume;
+      this.audio.volume = this.volume;
     };
     this.background = document.getElementById("background");
     this.title = document.getElementById("title");
