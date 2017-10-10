@@ -22,7 +22,7 @@
   <meta property="og:locale" content="en_us" />
   <meta property="og:url" content="https://radio.tik.tn/" />
   <link rel="canonical" href="https://radio.tik.tn/" />
-  <meta property="fb:app_id" content="109686076389436" />
+  <meta property="fb:app_id" content="148866022385074" />
 
   <meta name="twitter:title" property="og:title" content="Radio @ Tunisia" />
   <meta property="og:type" content="website" />
@@ -48,6 +48,8 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-256x256.png" sizes="256x256" />
   <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-512x512.png" sizes="512x512" />
+  <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-1024x1024.png" sizes="1024x1024" />
+  <link rel="icon" type="image/png" href="https://radio.tik.tn/imgs/logo-1600x1600.png" sizes="1600x1600" />
 
   <script type="text/javascript">
     (function(i, s, o, g, r, a, m) {
@@ -98,9 +100,21 @@
   <canvas id="canvas"></canvas>
   <audio id="audio"></audio>
   <ul class="actions-extra">
-    <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://radio.tik.tn"><i class="fa fa-facebook-square"></i></a></li>
-    <li><a target="_blank" href="https://twitter.com/intent/tweet?url=https://radio.tik.tn&text=I am listing to live radio with Radio @ Tunisia"><i class="fa fa-twitter-square"></i></a></li>
-    <li><a target="_blank" href="https://plus.google.com/share?url=https://radio.tik.tn"><i class="fa fa-google-plus-square"></i></a></li>
+    <li>
+      <div class="fb-share-button" data-href="https://radio.tik.tn" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fradio.tik.tn%2F&amp;src=sdkpreparse"><i class="fa fa-facebook-square"></i></a></div>
+    </li>
+    <li>
+      <a class="twitter-share-button" target="_blank" href="https://twitter.com/intent/tweet?url=https://radio.tik.tn&text=I am listing to live radio with Radio @ Tunisia&hashtags=radio,tik.tn&via=lejenome" data-size="small"><i class="fa fa-twitter-square"></i></a>
+    </li>
+    <li>
+      <div class="g-plus" data-action="share" data-href="https://radio.tik.tn"><a target="_blank" href="https://plus.google.com/share?url=https://radio.tik.tn"><i class="fa fa-google-plus-square"></i></a></div>
+    </li>
+    <li>
+      <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+    </li>
+    <li>
+      <div class="fb-share-button" data-href="https://radio.tik.tn/" data-layout="button_count" data-size="small" data-mobile-iframe="true"></div>
+    </li>
   </ul>
   <a id="codepen-link" href="https://tik.tn/" target="_blank">Tik</a>
 
@@ -126,6 +140,47 @@
   </script>
 
   <script defer src="js/player.js"></script>
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId: '148866022385074',
+        xfbml: true,
+        version: 'v2.10'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {
+        return;
+      }
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+  </script>
+  <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+
+    return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>
