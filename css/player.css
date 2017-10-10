@@ -10,7 +10,7 @@ body {
     position: fixed;
     z-index: 100;
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     color: #69cdd7;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -33,8 +33,8 @@ main {
     z-index: 90;
     width: 100%;
     height: 100%;
-    padding: 60px 0 60px 0;
-    padding-top: 120px;
+    padding: 60px 0 50px 0;
+    padding-top: 100px;
     color: #69cdd7;
     display: flex;
     align-items: center;
@@ -76,40 +76,45 @@ main li {
     width: 150px;
     height: 150px;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-    -flex-flow: column;
     display: block;
+    box-sizing: border-box;
+    /* margin: 0 auto; */
 }
 
 main ul li img {
     max-width: 100%;
-    max-height: 100%;
+    height: auto;
     vertical-align: top;
-    width: 100%;
+    display: block;
+    position: relative;
+    max-height: 100%;
+    margin: 0 auto;
 }
 
 #title {
     font-family: "Josefin Sans", sans-serif;
     font-size: 1.2em;
     text-align: center;
+    margin: 10px 0 10px 10px;
 }
 
 #controls {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 15px;
+    padding: 10px 15px;
 }
 
 #controls .btn {
     position: relative;
-    margin: 0 10px;
+    margin: 0 15px;
     cursor: pointer;
     -webkit-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
 }
 
 #controls .btn .fa {
-    width: 16px;
+    width: 20px;
     pointer-events: none;
 }
 
@@ -178,10 +183,13 @@ main ul li img {
     animation: spinner-anim 1s ease-out infinite;
 }
 
+#audio {
+    display: none;
+}
+
 #loader {
     position: absolute;
     bottom: 20px;
-    left: 20px;
     z-index: 3;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -196,6 +204,8 @@ main ul li img {
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out;
     transition: opacity 0.5s ease-in-out;
+    padding-left: 20px;
+    box-sizing: border-box;
 }
 
 #loader #loading-text {
@@ -252,12 +262,12 @@ main ul li img {
 }
 
 .webview .hide-webveiw {
-  display: none !important;
+    display: none !important;
 }
 
 #codepen-link {
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     right: 20px;
     height: 40px;
     width: 40px;
@@ -281,7 +291,7 @@ main ul li img {
 .actions-extra {
     position: absolute;
     left: 20px;
-    bottom: 5px;
+    bottom: 0;
     z-index: 99;
     margin: 0;
     padding: 0;
@@ -290,7 +300,7 @@ main ul li img {
 
 .actions-extra li {
     display: inline-block;
-    margin: 10px;
+    margin: 10px 5px;
     padding: 0;
 }
 
@@ -321,7 +331,7 @@ main ul li img {
         padding: 0;
     }
     main {
-        padding-top: 80px;
+        padding-top: 65px;
     }
 }
 
@@ -340,5 +350,5 @@ main ul li img {
 }
 
 .fb_iframe_widget {
-  top: -4px;
+    top: -4px;
 }

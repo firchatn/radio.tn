@@ -1,97 +1,174 @@
+// mimes:
+// audio/mp4                             aac f4a f4b m4a
+// audio/mpeg                            mp3
+// audio/x-wav                           wav
+// application/vnd.apple.mpegurl         m3u8
+// application/x-mpegURL                 m3u8
+
+// other radios:
+// mosaique radios for musics, ....
+// national radios: radio culturelle,
 const radios = [{
+  title: "Radio Nationale",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamnat/streamnat/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radionationale.png",
+  url: "http://www.radionationale.tn/",
+}, {
+  title: "Radio Jeunes",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamjeu/streamjeu/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiojeunes.png",
+  url: "http://www.radiojeunes.tn/",
+}, {
+  title: "Radio Tunis Chaîne Internationale",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamrtc/streamrtc/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/rtci.png",
+  url: "http://www.rtci.tn/",
+}, {
+  title: "Radio Sfax",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamsfa/streamsfa/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiosfax.png",
+  url: "http://www.radiosfax.tn/",
+}, {
+  title: "Radio Monastir",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streammon/streammon/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiomonastir.png",
+  url: "http://www.radiomonastir.tn/",
+}, {
+  title: "Radio Kef",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamkef/streamkef/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiokef.png",
+  url: "http://www.radiokef.tn/",
+}, {
+  title: "Radio Gafsa",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamgaf/streamgaf/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiogafsa.png",
+  url: "http://www.radiogafsa.tn/",
+}, {
+  title: "Radio Tatouin",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamtat/streamtat/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
+  img: "./imgs/radios/radiotataouine.png",
+  url: "http://www.radiotataouine.tn/",
+}, {
   title: "Mosaique FM",
   src: "http://radio.mosaiquefm.net:8000/mosalive",
-  img: "./imgs/mosaiquefm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/mosaiquefm.png",
   url: "https://www.mosaiquefm.net/",
 }, {
   title: "Diwan FM",
   src: "http://stream8.tanitweb.com/diwanfm",
-  img: "./imgs/diwanfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/diwanfm.png",
   url: "http://www.diwanfm.net/",
 }, {
   title: "Shems FM",
   src: "http://stream6.tanitweb.com/shems",
-  img: "./imgs/shemsfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/shemsfm.png",
   url: "http://shemsfm.net:8080/",
 }, {
   title: "Jawhara FM",
   src: "http://streaming2.toutech.net:8000/jawharafm",
-  img: "./imgs/jawharafm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/jawharafm.png",
   url: "http://www.jawharafm.net/",
 }, {
   title: "Zitouna FM",
   src: "http://stream8.tanitweb.com/zitounafm",
-  img: "./imgs/zitounafm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/zitounafm.png",
   url: "http://www.zitounafm.net/",
 }, {
   title: "Express FM",
   src: "http://expressfm.ice.infomaniak.ch/expressfm-64.mp3",
-  img: "./imgs/radioexpressfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radioexpressfm.png",
   url: "http://www.radioexpressfm.com/",
 }, {
   title: "Oxygene FM",
   src: "http://radiooxygenefm.ice.infomaniak.ch/radiooxygenefm-64.mp3",
-  img: "./imgs/radiooxygene.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radiooxygene.png",
   url: "http://www.radiooxygene.tn/",
 }, {
   title: "Knooz FM",
   src: "http://streaming.knoozfm.net:8000/knoozfm",
-  img: "./imgs/knoozfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/knoozfm.png",
   url: "http://www.knoozfm.net/",
 }, {
   title: "Cap FM",
   src: "http://stream8.tanitweb.com/capfm",
-  img: "./imgs/capradio.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/capradio.png",
   url: "http://www.capradio.tn/",
 }, {
   title: "I FM",
   src: "http://5.135.138.182:8000/direct",
-  img: "./imgs/ifm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/ifm.png",
   url: "https://www.ifm.tn/",
 }, {
   title: "Sabra FM",
   src: "http://stream6.tanitweb.com/sabrafm",
-  img: "./imgs/radiosabrafm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radiosabrafm.png",
   url: "http://www.radiosabrafm.net/",
 }, {
   title: "Misk FM",
   src: "http://178.32.253.134:8000/stream?type=.mp3",
-  img: "./imgs/miskfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/miskfm.png",
   url: "http://misk.fm/",
 }, {
   title: "Radio Med",
   src: "http://stream6.tanitweb.com/radiomed",
-  img: "./imgs/radiomedtunisie.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radiomedtunisie.png",
   url: "http://radiomedtunisie.com/",
 }, {
   title: "Oasis FM",
   src: "http://stream6.tanitweb.com/oasis",
-  img: "./imgs/oasisfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/oasisfm.png",
   url: "http://www.oasisfm.tn/",
 }, {
   title: "Ulysse FM",
   src: "http://188.165.79.152:9990/;stream.mp3",
-  img: "./imgs/ulysse-fm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/ulysse-fm.png",
   url: "http://www.ulysse-fm.net/",
 }, {
   title: "Saraha FM",
   src: "http://ns326208.ip-37-59-9.eu:8000/sarahafm",
-  img: "./imgs/sarahafm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/sarahafm.png",
   url: "http://sarahafm.tn/",
 }, {
   title: "MFM FM",
   src: "http://92.222.225.69:9300/;",
-  img: "./imgs/radiomfm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radiomfm.png",
   url: "http://www.radiomfm.tn/",
 }, {
   title: "Nejma FM",
   src: "http://188.166.109.186:8000/stream",
-  img: "./imgs/nejmafm.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/nejmafm.png",
   url: "http://nejmafm.com/",
 }, {
   title: "Radio 6",
   src: "http://streaming.radio6tunis.net:8000/radio6tunis",
-  img: "./imgs/radio6tunis.png",
+  type: "audio/mpeg",
+  img: "./imgs/radios/radio6tunis.png",
   url: "http://www.radio6tunis.net/",
 }];
 
@@ -175,13 +252,15 @@ class App {
   initPlaylist() {
     let idx = 0;
     for (const radio of radios) {
-      const item = document.createElement("li");
-      const img = document.createElement("img");
-      img.src = radio.img;
-      img.dataset.idx = idx;
-      item.dataset.idx = idx;
-      item.appendChild(img);
-      this.playlist.appendChild(item);
+      if (radio.type === "audio/mpeg") {
+        const item = document.createElement("li");
+        const img = document.createElement("img");
+        img.src = radio.img;
+        img.dataset.idx = idx;
+        item.dataset.idx = idx;
+        item.appendChild(img);
+        this.playlist.appendChild(item);
+      }
       idx++;
     }
   }
