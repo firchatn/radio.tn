@@ -334,3 +334,7 @@ main ul li img {
         transform: rotate(360deg);
     }
 }
+
+.fb_iframe_widget {
+  top: -4px;
+}
