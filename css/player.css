@@ -251,6 +251,10 @@ main ul li img {
     width: 100vw;
 }
 
+.webview .hide-webveiw {
+  display: none !important;
+}
+
 #codepen-link {
     position: absolute;
     bottom: 10px;

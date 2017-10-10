@@ -102,6 +102,9 @@ class App {
     this.initPlaylist();
   }
   initUI() {
+    if ("_cordovaNative" in window) {
+      document.body.classList.add("webveiw");
+    }
     this.controls = {
       prev: document.querySelector("#btn-prev"),
       next: document.querySelector("#btn-next"),
