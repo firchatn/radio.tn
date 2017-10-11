@@ -252,8 +252,7 @@ class App {
   initPlaylist() {
     let idx = 0;
     for (const radio of radios) {
-      if (radio.type === "audio/mpeg" ||
-        (this.player && radio.type === "application/dash+xml")) {
+      if (radio.type === "audio/mpeg") {
         const item = document.createElement("li");
         const img = document.createElement("img");
         img.src = radio.img;
@@ -270,12 +269,6 @@ class App {
     this.volume = 1;
 
     this.audio = document.getElementById("audio");
-    try {
-      shaka.polyfill.installAll();
-      if (shaka.Player.isBrowserSupported()) {
-        this.player = new shaka.Player(this.audio);
-      }
-    } catch (e) {}
   }
   loadAudio() {
     this.audioReady = false;
@@ -290,12 +283,6 @@ class App {
       case "audio/mpeg":
         this.audio.src = radios[this.currentSong].src;
         this.audio.load();
-        break;
-      case "application/dash+xml":
-        if (!this.player) {
-          break;
-        }
-        this.player.load(radios[this.currentSong].src);
         break;
     }
     this.audio.oncanplay = () => {
