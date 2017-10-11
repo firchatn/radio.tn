@@ -22,6 +22,7 @@
 
   <plugin name="cordova-plugin-whitelist" spec="1" />
   <access origin="*" />
+  <access origin="http://streamedge.radiotunisienne.com:1936" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
 </widget>
