@@ -3,6 +3,7 @@
   "license": "MPL-2.0",
   "dependencies": {
     "font-awesome": "~4.7.0",
+    "shaka-player": "^2.2.2",
     "video.js": "^6.2.7",
     "videojs-contrib-dash": "^2.9.1",
     "videojs-contrib-hls": "^5.11.0"

@@ -52,7 +52,7 @@ const radios = [{
   url: "http://www.radiogafsa.tn/",
 }, {
   title: "Radio Tatouin",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamtat/streamtat/playlist.m3u8",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamtat/streamtat/manifest.mpd",
   type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiotataouine.png",
   url: "http://www.radiotataouine.tn/",
@@ -252,7 +252,8 @@ class App {
   initPlaylist() {
     let idx = 0;
     for (const radio of radios) {
-      if (radio.type === "audio/mpeg") {
+      if (radio.type === "audio/mpeg" ||
+        (this.player && radio.type === "application/vnd.apple.mpegurl")) {
         const item = document.createElement("li");
         const img = document.createElement("img");
         img.src = radio.img;
@@ -269,6 +270,12 @@ class App {
     this.volume = 1;
 
     this.audio = document.getElementById("audio");
+    try {
+      shaka.polyfill.installAll();
+      if (shaka.Player.isBrowserSupported()) {
+        this.player = new shaka.Player(this.audio);
+      }
+    } catch (e) {}
   }
   loadAudio() {
     this.audioReady = false;
@@ -279,8 +286,18 @@ class App {
     this.controls.next.classList.add("disabled");
     this.controls.play.classList.add("disabled");
 
-    this.audio.src = radios[this.currentSong].src;
-    this.audio.load();
+    switch (radios[this.currentSong].type) {
+      case "audio/mpeg":
+        this.audio.src = radios[this.currentSong].src;
+        this.audio.load();
+        break;
+      case "application/vnd.apple.mpegurl":
+        if (!this.player) {
+          break;
+        }
+        this.player.load(radios[this.currentSong].src);
+        break;
+    }
     this.audio.oncanplay = () => {
       this.audio.oncanplay = undefined;
       this.playAudio();
@@ -306,5 +323,5 @@ class App {
 
 window.onload = () => {
   // eslint-disable-next-line no-unused-vars
-  let app = new App();
+  window.app = new App();
 };
