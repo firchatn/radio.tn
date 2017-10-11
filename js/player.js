@@ -253,7 +253,7 @@ class App {
   initPlaylist() {
     let idx = 0;
     for (const radio of radios) {
-      if (radio.type === "audio/mpeg" || this.isWebview) {
+      if (radio.type === "audio/mpeg") {
         const item = document.createElement("li");
         const img = document.createElement("img");
         img.src = radio.img;
@@ -270,9 +270,6 @@ class App {
     this.volume = 1;
 
     this.audio = document.getElementById("audio");
-    try {
-      this.player = videojs(this.audio);
-    } catch (e) {}
   }
   loadAudio() {
     this.audioReady = false;
@@ -286,10 +283,6 @@ class App {
     switch (radios[this.currentSong].type) {
       case "audio/mpeg":
         this.audio.src = radios[this.currentSong].src;
-        this.audio.load();
-        break;
-      case "application/vnd.apple.mpegurl":
-        this.player.src(radios[this.currentSong]);
         this.audio.load();
         break;
     }
