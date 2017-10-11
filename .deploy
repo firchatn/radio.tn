@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -x
+
+# TODO:  dev, production
+ENV=${1:-dev}
+
+curl -X PUT -d 'data={"pull":"true"}' https://build.phonegap.com/api/v1/apps/2839635?auth_token=$(cat .phonegap_token)
