@@ -10,7 +10,6 @@
       Tik.tn
   </author>
   <icon src="imgs/logo-512x512.png" />
-  <splash src="imgs/tik-1024x1024.png" />
 
   <platform name="ios" />
   <platform name="android" />
@@ -18,8 +17,11 @@
 
   <content src="index.html" />
 
-   <preference name="Fullscreen" value="true" />
-   <preference name="BackgroundColor" value="0x101F24ff"/>
+  <!--<preference name="Fullscreen" value="true" />-->
+  <preference name="BackgroundColor" value="0x101F24ff"/>
+
+  <plugin name="cordova-plugin-splashscreen" spec="https://github.com/apache/cordova-plugin-splashscreen.git" />
+  <splash src="imgs/tik-1024x1024.png" />
 
   <plugin name="cordova-plugin-whitelist" spec="1" />
   <access origin="*" />

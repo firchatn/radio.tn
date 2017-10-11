@@ -180,7 +180,7 @@ class App {
   }
   initUI() {
     if ("_cordovaNative" in window) {
-      document.body.classList.add("webveiw");
+      document.body.classList.add("webview");
     }
     this.controls = {
       prev: document.querySelector("#btn-prev"),
