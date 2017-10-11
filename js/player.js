@@ -10,50 +10,50 @@
 // national radios: radio culturelle,
 const radios = [{
   title: "Radio Nationale",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamnat/streamnat/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamnat/streamnat/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radionationale.png",
   url: "http://www.radionationale.tn/",
 }, {
   title: "Radio Jeunes",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamjeu/streamjeu/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamjeu/streamjeu/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiojeunes.png",
   url: "http://www.radiojeunes.tn/",
 }, {
   title: "Radio Tunis Chaîne Internationale",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamrtc/streamrtc/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamrtc/streamrtc/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/rtci.png",
   url: "http://www.rtci.tn/",
 }, {
   title: "Radio Sfax",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamsfa/streamsfa/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamsfa/streamsfa/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiosfax.png",
   url: "http://www.radiosfax.tn/",
 }, {
   title: "Radio Monastir",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streammon/streammon/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streammon/streammon/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiomonastir.png",
   url: "http://www.radiomonastir.tn/",
 }, {
   title: "Radio Kef",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamkef/streamkef/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamkef/streamkef/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiokef.png",
   url: "http://www.radiokef.tn/",
 }, {
   title: "Radio Gafsa",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamgaf/streamgaf/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamgaf/streamgaf/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiogafsa.png",
   url: "http://www.radiogafsa.tn/",
 }, {
   title: "Radio Tatouin",
-  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamtat/streamtat/manifest.mpd",
-  type: "application/dash+xml",
+  src: "http://streamedge.radiotunisienne.com:1936/rliveedge/streamtat/streamtat/playlist.m3u8",
+  type: "application/vnd.apple.mpegurl",
   img: "./imgs/radios/radiotataouine.png",
   url: "http://www.radiotataouine.tn/",
 }, {
@@ -180,6 +180,7 @@ class App {
   }
   initUI() {
     if ("_cordovaNative" in window) {
+      this.isWebview = true;
       document.body.classList.add("webview");
     }
     this.controls = {
@@ -252,7 +253,7 @@ class App {
   initPlaylist() {
     let idx = 0;
     for (const radio of radios) {
-      if (radio.type === "audio/mpeg") {
+      if (radio.type === "audio/mpeg" || this.isWebview) {
         const item = document.createElement("li");
         const img = document.createElement("img");
         img.src = radio.img;
@@ -269,6 +270,9 @@ class App {
     this.volume = 1;
 
     this.audio = document.getElementById("audio");
+    try {
+      this.player = videojs(this.audio);
+    } catch (e) {}
   }
   loadAudio() {
     this.audioReady = false;
@@ -282,6 +286,10 @@ class App {
     switch (radios[this.currentSong].type) {
       case "audio/mpeg":
         this.audio.src = radios[this.currentSong].src;
+        this.audio.load();
+        break;
+      case "application/vnd.apple.mpegurl":
+        this.player.src(radios[this.currentSong]);
         this.audio.load();
         break;
     }
